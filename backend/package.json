@@ -18,7 +18,8 @@
   "devDependencies": {
     "@types/cors": "^2.8.13",
     "@types/express": "^4.17.15",
-    "@types/node": "^18.11.18"
+    "@types/node": "^18.11.18",
+    "typescript": "^5.0.4"
   },
   "keywords": [],
   "author": "",
