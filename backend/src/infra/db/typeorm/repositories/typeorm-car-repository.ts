@@ -1,7 +1,7 @@
 import { AddCarParams } from '../../../../domain/use-cases/car/add-car'
 import { AddCarRepository } from '../../../../data/protocols/car/add-car-repository'
 import { LoadCarsRepository } from '../../../../data/protocols/car/load-cars-repository'
-import { TypeOrmCar } from '../entities/typeorm-car'
+import { TypeOrmCar } from '../entities/typeorm-recipe'
 import { AppDataSource } from '../helper/app-data-source'
 import { Mapper } from '../mappers/car-mapper'
 import { CarModel } from '../../../../domain/models/car'

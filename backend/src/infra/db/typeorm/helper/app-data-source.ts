@@ -1,6 +1,5 @@
 import { DataSource } from 'typeorm'
-import { TypeOrmCar } from '../entities/typeorm-car'
-import { TypeOrmOwner } from '../entities/typeorm-owner'
+import { TypeOrmRecipe } from '../entities/typeorm-recipe'
 
 export class AppDataSource {
   private static instance: DataSource
@@ -15,7 +14,7 @@ export class AppDataSource {
       database: process.env.DB_NAME,
       synchronize: true,
       logging: true,
-      entities: [TypeOrmCar, TypeOrmOwner],
+      entities: [TypeOrmRecipe],
       subscribers: [],
       migrations: []
     })
