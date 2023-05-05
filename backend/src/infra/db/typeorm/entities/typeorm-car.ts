@@ -1,4 +1,4 @@
-import { CarModel } from 'domain/models/car'
+import { type CarModel } from 'domain/models/car'
 import {
   Column,
   Entity,
@@ -9,7 +9,7 @@ import {
 import { TypeOrmOwner } from './typeorm-owner'
 
 @Entity('car')
-export class TypeOrmCar implements CarModel {
+export class TypeOrmRecipe implements CarModel {
   @PrimaryGeneratedColumn('uuid')
   id: string
 
