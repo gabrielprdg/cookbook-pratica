@@ -1,7 +1,8 @@
+import { ImageModel } from '../../../../domain/model/image'
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
 
 @Entity()
-export class TypeOrmImage {
+export class TypeOrmImage implements ImageModel {
   @PrimaryGeneratedColumn()
   id: number
 

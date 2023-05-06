@@ -9,6 +9,7 @@ export class Mapper {
       weight: typeOrmRecipe.weight,
       assemblyIngradients: typeOrmRecipe.assemblyIngradients,
       operatingInstructions: typeOrmRecipe.operatingInstructions,
+      image: typeOrmRecipe.image,
       entryTemperature: typeOrmRecipe.entryTemperature
     }
 
