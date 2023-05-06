@@ -1,20 +1,24 @@
-import { LoadRecipes } from 'domain/use-cases/load-recipes/load-recipes'
-import { ok, serverError } from '../../../helpers/http/http-helper'
+import { DeleteRecipeById } from 'domain/use-cases/delete-recipe/delete-recipe'
+import { noContent, serverError } from '../../../helpers/http/http-helper'
 import { Controller } from '../../../protocols/controller'
 import { HttpRequest, HttpResponse } from '../../../protocols/http'
 
-export class LoadRecipesController implements Controller {
-  private readonly loadRecipes: LoadRecipes
+export class DeleteRecipeByIdController implements Controller {
+  private readonly deleteRecipe: DeleteRecipeById
 
-  constructor (loadRecipes: LoadRecipes) {
-    this.loadRecipes = loadRecipes
+  constructor (deleteRecipe: DeleteRecipeById) {
+    this.deleteRecipe = deleteRecipe
   }
 
   async handle (httpRequest: HttpRequest): Promise<HttpResponse> {
     try {
-      const recipes = await this.loadRecipes.loadAll()
+      const {
+        id
+      } = httpRequest.params
 
-      return ok(recipes)
+      await this.deleteRecipe.delete(id)
+
+      return noContent()
     } catch (err) {
       return serverError(err)
     }
