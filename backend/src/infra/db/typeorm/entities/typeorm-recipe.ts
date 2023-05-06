@@ -2,9 +2,12 @@ import {
   Column,
   CreateDateColumn,
   Entity,
+  JoinColumn,
+  OneToOne,
   PrimaryGeneratedColumn
 } from 'typeorm'
 import { RecipeModel } from '../../../../domain/model/recipe'
+import { TypeOrmImage } from './typeorm-image'
 
 @Entity('recipe')
 export class TypeOrmRecipe implements RecipeModel {
@@ -25,6 +28,10 @@ export class TypeOrmRecipe implements RecipeModel {
 
   @Column()
   entryTemperature: string
+
+  @OneToOne(() => TypeOrmImage)
+  @JoinColumn()
+  image: TypeOrmImage
 
   @CreateDateColumn()
   created_at: Date
