@@ -1,4 +1,4 @@
-import { DeleteRecipeById } from 'domain/use-cases/delete-recipe/delete-recipe'
+import { DeleteRecipeById } from '../../../../domain/use-cases/delete-recipe/delete-recipe'
 import { noContent, serverError } from '../../../helpers/http/http-helper'
 import { Controller } from '../../../protocols/controller'
 import { HttpRequest, HttpResponse } from '../../../protocols/http'
