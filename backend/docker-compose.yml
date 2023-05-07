@@ -1,0 +1,31 @@
+version: '3.1'
+services:
+  db:
+    image: mysql
+    env_file:
+      - .env
+    ports:
+      - 3306:3306
+    # create a volumes to persist data 
+    volumes:
+      - mysql_data:/var/lib/mysql
+  app:
+    build: .
+    container_name: cookbook_app
+    restart: always
+    command: npm run start
+    volumes:
+      - ./src:/usr/src/cookbook/src
+      - ./dist:/usr/src/cookbook/dist
+    ports:
+      - 8084:8084
+      - 9222:9222
+    env_file:
+      - .env
+    depends_on:
+      - db
+volumes:
+  mysql_data:
+
+
+

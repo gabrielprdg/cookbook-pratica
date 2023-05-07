@@ -4,7 +4,7 @@ import { RequiredFieldsValidation, ValidationComposite } from '../../../../../va
 export const makeAddRecipeValidation = (): ValidationComposite => {
   const validations: Validation[] = []
 
-  for (const field of ['name', 'weight', 'assemblyIngradients', 'operatingInstruction', 'entryTemperature']) {
+  for (const field of ['name', 'weight', 'assemblyIngradients', 'operatingInstructions', 'entryTemperature']) {
     validations.push(new RequiredFieldsValidation(field))
   }
   return new ValidationComposite(validations)

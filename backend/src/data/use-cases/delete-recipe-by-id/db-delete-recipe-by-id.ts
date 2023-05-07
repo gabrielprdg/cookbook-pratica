@@ -1,4 +1,4 @@
-import { DeleteRecipeByIdRepository } from '../../../data/protocols/delete-recipe-by-id'
+import { DeleteRecipeByIdRepository } from '../../../data/protocols/recipe/delete-recipe-by-id'
 import { DeleteRecipeById } from '../../../domain/use-cases/delete-recipe/delete-recipe'
 
 export class DbDeleteRecipeById implements DeleteRecipeById {

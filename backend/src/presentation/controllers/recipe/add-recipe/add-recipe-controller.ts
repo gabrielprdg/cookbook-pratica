@@ -28,11 +28,21 @@ export class AddRecipeController implements Controller {
         entryTemperature
       } = httpRequest.body
 
+      const file = httpRequest.files
+
+      const image = {
+        name: file.name,
+        size: file.size,
+        key: file.key,
+        url: file.url
+      }
+
       await this.addRecipe.add({
         name,
         weight,
         assemblyIngradients,
         operatingInstructions,
+        image,
         entryTemperature
       })
 

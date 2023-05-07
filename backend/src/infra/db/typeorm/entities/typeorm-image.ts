@@ -1,7 +1,7 @@
 import { ImageModel } from '../../../../domain/model/image'
 import { Entity, PrimaryGeneratedColumn, Column } from 'typeorm'
 
-@Entity()
+@Entity('image')
 export class TypeOrmImage implements ImageModel {
   @PrimaryGeneratedColumn()
   id: number

@@ -1,4 +1,4 @@
-import { LoadRecipesRepository } from '../../../data/protocols/load-recipes-repository'
+import { LoadRecipesRepository } from '../../../data/protocols/recipe/load-recipes-repository'
 import { RecipeModel } from '../../../domain/model/recipe'
 import { LoadRecipes } from '../../../domain/use-cases/load-recipes/load-recipes'
 

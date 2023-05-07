@@ -1,5 +1,6 @@
 import { DataSource } from 'typeorm'
 import { TypeOrmRecipe } from '../entities/typeorm-recipe'
+import { TypeOrmImage } from '../entities/typeorm-image'
 
 export class AppDataSource {
   private static instance: DataSource
@@ -14,7 +15,7 @@ export class AppDataSource {
       database: process.env.DB_NAME,
       synchronize: true,
       logging: true,
-      entities: [TypeOrmRecipe],
+      entities: [TypeOrmRecipe, TypeOrmImage],
       subscribers: [],
       migrations: []
     })
