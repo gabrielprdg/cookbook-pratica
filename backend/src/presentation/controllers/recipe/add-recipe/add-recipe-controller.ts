@@ -28,13 +28,13 @@ export class AddRecipeController implements Controller {
         entryTemperature
       } = httpRequest.body
 
-      const file = httpRequest.files
+      const file = httpRequest.file
 
       const image = {
-        name: file.name,
+        name: file.originalname,
         size: file.size,
         key: file.key,
-        url: file.url
+        url: file.location
       }
 
       await this.addRecipe.add({

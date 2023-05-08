@@ -1,7 +1,7 @@
 export interface HttpRequest {
   body?: any
   params?: any
-  files?: any
+  file?: any
   headers?: any
   accountId?: string
 }

@@ -21,13 +21,14 @@ export class DbAddRecipe implements AddRecipe {
       entryTemperature
      } = recipeData
     // add recipe image
-    await this.addImageRepository.add(image)
+    const imageData = await this.addImageRepository.add(image)
 
     await this.addRecipeRepository.add({
       name,
-      weight,
+      weight: Number(weight),
       assemblyIngradients,
       operatingInstructions,
+      image: imageData,
       entryTemperature
     })
   }

@@ -1,5 +1,5 @@
 export interface ImageModel {
-  id: number
+  id: string
   name: string
   size: number
   key: string

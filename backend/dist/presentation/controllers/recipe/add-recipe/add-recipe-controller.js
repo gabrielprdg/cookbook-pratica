@@ -14,11 +14,19 @@ class AddRecipeController {
                 return (0, http_helper_1.badRequest)(error);
             }
             const { name, weight, assemblyIngradients, operatingInstructions, entryTemperature } = httpRequest.body;
+            const file = httpRequest.file;
+            const image = {
+                name: file.originalname,
+                size: file.size,
+                key: file.key,
+                url: file.location
+            };
             await this.addRecipe.add({
                 name,
                 weight,
                 assemblyIngradients,
                 operatingInstructions,
+                image,
                 entryTemperature
             });
             return (0, http_helper_1.noContent)();
