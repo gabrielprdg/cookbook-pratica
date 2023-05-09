@@ -5,6 +5,55 @@
   flex-direction: column;
 }
 
+.landingContainer {
+  display: flex;
+}
+
+.sideContent {
+  display: flex;
+  padding-left: 50px;
+  padding-top: 50px;
+  height: 100px;
+  align-items: center;
+}
+
+.sideHeader {
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  padding-top: 50px;
+}
+
+.top {
+  display: flex;
+  align-items: center;
+}
+
+.top h2 {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.createRecipe {
+  margin-left: 40px;
+  color: #5696ed;
+  outline: none;
+  border: none;
+  background-color: white;
+}
+
+.searchRecipe {
+  margin-top: 30px;
+  width: 900px;
+  color: var(--black);
+  padding: 10px;
+  border: none;
+  outline: none;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  border-radius: 4px;
+}
+
 .sideBar ul{
   height: 100%;
   list-style-type: none;

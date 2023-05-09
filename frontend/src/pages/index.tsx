@@ -29,6 +29,24 @@ export default function Landing() {
   return (
     <div className={styles.landingContainer}>
       <SideBar/>
+      <div className={styles.sideContent}>
+        <div className={styles.sideHeader}>
+          <div className={styles.top}>
+            <h2>CookBook</h2>
+            <button className={styles.createRecipe}>+ Create recipe</button>
+          </div>
+
+          <input 
+            type="search"
+            name="srecipe"
+            id="srecipe"
+            placeholder='Search recipe'
+            className={styles.searchRecipe}
+          />
+        </div>
+        
+
+      </div>
     </div>
   )
 }
