@@ -1,36 +1,36 @@
-import CarList, { CarListProps } from '@/components/CarList'
 import { GetServerSideProps } from 'next'
 import { api } from '../../services/api'
-import Header from '../components/Header'
 import styles from './styles.module.scss'
+import SideBar from '@/components/SideBar'
 
-export default function Landing({ cars }: CarListProps) {
+export type ImageData = {
+  id: string
+  name: string
+  size: number
+  key: string
+  url: string
+}
+
+export type RecipeData = {
+  name: string
+  weight: number
+  assemblyIngradients: string
+  operatingInstructions: string
+  image: ImageData
+  entryTemperature: string
+}
+
+export type RecipeListProps = {
+  recipes: RecipeData[]
+}
+
+export default function Landing() {
 
   return (
     <div className={styles.landingContainer}>
-      <Header/>
-      <div className={styles.carList}>
-        <h2 className={styles.listTitle}>
-          Listagem de Carros
-        </h2>
-
-        {cars ? <CarList cars={cars}/> : <h2>Não há carros cadastrados ainda.</h2>}
-        
-      </div>
+      <SideBar/>
     </div>
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
-  const carsData = await api.get('cars')
-  
-
-  const cars = carsData.data
-
-  return {
-    props: {
-      cars
-    }
-  }
-}
 

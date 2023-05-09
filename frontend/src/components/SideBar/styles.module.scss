@@ -1,0 +1,35 @@
+.sideBarContainer {
+  width: 230px;
+  height: 100vh;
+  background-color: #01478d;
+  display: flex;
+  justify-content: center;
+}
+
+.topItems {
+  margin-top: 20px;
+  color: white;
+  width: 100%;
+}
+
+.praticaLogo {
+  border-bottom: 2px solid white;
+}
+
+.topItems li {
+  list-style: none;
+}
+
+.topItems li ul{
+  display: flex;
+  align-items: center;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+  border-bottom: 2px solid white;
+  padding: 6px;
+}
+
+.topItems li ul :nth-child(1) {
+  margin-right: 8px;
+}
