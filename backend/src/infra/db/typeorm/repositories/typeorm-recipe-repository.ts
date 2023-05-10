@@ -1,3 +1,4 @@
+import { LoadRecipeByIdRepository } from '../../../../data/protocols/recipe/load-recipe-by-id-repository'
 import { AddRecipeRepository, AddRecipeRepositoryData } from '../../../../data/protocols/recipe/add-recipe-repository'
 import { DeleteRecipeByIdRepository } from '../../../../data/protocols/recipe/delete-recipe-by-id'
 import { LoadRecipesRepository } from '../../../../data/protocols/recipe/load-recipes-repository'
@@ -6,7 +7,7 @@ import { TypeOrmRecipe } from '../entities/typeorm-recipe'
 import { AppDataSource } from '../helper/app-data-source'
 import { Mapper } from '../mappers/recipe-mapper'
 
-export class TypeOrmRecipeRepository implements AddRecipeRepository, LoadRecipesRepository, DeleteRecipeByIdRepository {
+export class TypeOrmRecipeRepository implements AddRecipeRepository, LoadRecipesRepository, DeleteRecipeByIdRepository, LoadRecipeByIdRepository {
   async add (recipeData: AddRecipeRepositoryData): Promise<void> {
     const recipe = new TypeOrmRecipe()
 
@@ -42,5 +43,17 @@ export class TypeOrmRecipeRepository implements AddRecipeRepository, LoadRecipes
     .from(TypeOrmRecipe)
     .where('id = :id', { id })
     .execute()
+  }
+
+  async loadById (id: string): Promise<RecipeModel> {
+    const recipe = await AppDataSource.getInstance()
+    .getRepository(TypeOrmRecipe)
+    .createQueryBuilder('recipe')
+    .where('recipe.id = :id', { id })
+    .getOne()
+
+    const domainRecipe = Mapper.toDomainEntity(recipe)
+
+    return domainRecipe
   }
 }
