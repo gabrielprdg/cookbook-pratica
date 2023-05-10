@@ -2,29 +2,10 @@ import { GetServerSideProps } from 'next'
 import { api } from '../../services/api'
 import styles from './styles.module.scss'
 import SideBar from '@/components/SideBar'
+import RecipeList, { RecipeListProps } from '@/components/RecipeList'
 
-export type ImageData = {
-  id: string
-  name: string
-  size: number
-  key: string
-  url: string
-}
 
-export type RecipeData = {
-  name: string
-  weight: number
-  assemblyIngradients: string
-  operatingInstructions: string
-  image: ImageData
-  entryTemperature: string
-}
-
-export type RecipeListProps = {
-  recipes: RecipeData[]
-}
-
-export default function Landing() {
+export default function Landing({ recipes } : RecipeListProps) {
 
   return (
     <div className={styles.landingContainer}>
@@ -45,10 +26,21 @@ export default function Landing() {
           />
         </div>
         
-
+        <RecipeList recipes={recipes}/>
       </div>
     </div>
   )
 }
 
+export const getServerSideProps: GetServerSideProps = async () => {
+  const recipesData = await api.get('recipes')
+  
 
+  const recipes = recipesData.data
+
+  return {
+    props: {
+      recipes
+    }
+  }
+}

@@ -1,0 +1,120 @@
+.recipeDetailsContainer {
+  display: flex;
+}
+
+.sideBar {
+  display: flex;
+}
+
+.asideContent {
+  padding: 60px 80px;
+}
+
+.recipeHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+
+.titles {
+  display: flex;
+  align-items: center;
+}
+
+.recipeHeader h2 {
+  margin-left: 40px;
+}
+
+.recipeHeader span {
+  margin-left: 40px;
+}
+
+.recipeDetails {
+  display: flex;
+  flex-direction: column;
+  color: var(--black);
+}
+
+.det {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  margin-bottom: 30px;
+  margin-left: 33px;
+}
+
+.infos {
+  margin-left: 70px;
+}
+
+.gramsAndTemp {
+  display: flex;
+  margin-bottom: 26px;
+}
+
+.weight {
+  display: flex;
+  margin-right: 50px;
+}
+
+.weight span {
+  margin-left: 40px;
+  border: 1px solid #aeb1b6;
+  padding: 6px 4px 8px 4px;
+  border-radius: 3px;
+}
+
+.temp span {
+  margin-left: 25px;
+  border: 1px solid #aeb1b6;
+  padding: 6px 4px 8px 4px;
+  border-radius: 3px;
+}
+
+.temp {
+  display: flex;
+  margin-left: 10px;
+}
+
+.assemblyTitle {
+  margin-bottom: 10px;
+}
+
+.operatingTitle {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.assemblyIngradients p {
+  color: #aeb1b6;
+}
+
+.operatingInstructions p {
+  color: #aeb1b6;
+}
+
+.actions {
+  display: flex;
+  margin-left: 600px;
+}
+
+.actions button{
+  color: #5696ed;
+  background-color: white;
+  border: none;
+  font-size: 14px;
+}
+
+.actions:first-child {
+  margin-right: 5px;
+}
+
+.edit {
+  display: flex;
+  margin-right: 4px;
+}
+
+.delete {
+  display: flex;
+  align-items: center;
+}

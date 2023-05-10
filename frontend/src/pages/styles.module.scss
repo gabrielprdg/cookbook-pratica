@@ -1,20 +1,14 @@
-.carList {
-  margin: 170px 140px;
-  color: var(--black);
-  display: flex;
-  flex-direction: column;
-}
-
 .landingContainer {
   display: flex;
 }
 
 .sideContent {
   display: flex;
+  flex-direction: column;
   padding-left: 50px;
-  padding-top: 50px;
+  padding-top: 10px;
   height: 100px;
-  align-items: center;
+  justify-content: flex-start;
 }
 
 .sideHeader {
@@ -64,13 +58,7 @@
 }
 
 @media (max-width: 500px) {
-  .carList {
-    margin: 110px 30px;
-  }
 
-  .carList h2 {
-    font-size: 23px;
-  }
 }
 
 
