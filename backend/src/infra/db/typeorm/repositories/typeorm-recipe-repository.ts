@@ -49,6 +49,8 @@ export class TypeOrmRecipeRepository implements AddRecipeRepository, LoadRecipes
     const recipe = await AppDataSource.getInstance()
     .getRepository(TypeOrmRecipe)
     .createQueryBuilder('recipe')
+    .leftJoinAndSelect('recipe.image', 'image')
+    .select(['recipe', 'image'])
     .where('recipe.id = :id', { id })
     .getOne()
 
