@@ -2,12 +2,14 @@ import { LoadRecipeByIdRepository } from '../../../../data/protocols/recipe/load
 import { AddRecipeRepository, AddRecipeRepositoryData } from '../../../../data/protocols/recipe/add-recipe-repository'
 import { DeleteRecipeByIdRepository } from '../../../../data/protocols/recipe/delete-recipe-by-id'
 import { LoadRecipesRepository } from '../../../../data/protocols/recipe/load-recipes-repository'
+import { UpdateRecipeByIdRepository } from '../../../../data/protocols/recipe/update-recipe-by-id-repository'
 import { RecipeModel } from '../../../../domain/model/recipe'
 import { TypeOrmRecipe } from '../entities/typeorm-recipe'
 import { AppDataSource } from '../helper/app-data-source'
 import { Mapper } from '../mappers/recipe-mapper'
+import { RecipeRequest } from 'domain/use-cases/update-recipe-by-id/update-recipe-by-id'
 
-export class TypeOrmRecipeRepository implements AddRecipeRepository, LoadRecipesRepository, DeleteRecipeByIdRepository, LoadRecipeByIdRepository {
+export class TypeOrmRecipeRepository implements AddRecipeRepository, LoadRecipesRepository, DeleteRecipeByIdRepository, LoadRecipeByIdRepository, UpdateRecipeByIdRepository {
   async add (recipeData: AddRecipeRepositoryData): Promise<void> {
     const recipe = new TypeOrmRecipe()
 
@@ -57,5 +59,14 @@ export class TypeOrmRecipeRepository implements AddRecipeRepository, LoadRecipes
     const domainRecipe = Mapper.toDomainEntity(recipe)
 
     return domainRecipe
+  }
+
+  async updateById (id: string, recipeData: RecipeRequest): Promise<void> {
+    await AppDataSource.getInstance()
+    .createQueryBuilder()
+    .update(TypeOrmRecipe)
+    .set(recipeData)
+    .where('id = :id', { id })
+    .execute()
   }
 }
