@@ -7,6 +7,7 @@
 .recipesWrapper {
   display: grid;
   grid-template-columns: repeat(4, minmax(320px, 1fr));
+  grid-row-gap: 20px;
 }
 
 .linkRecipeDetails {

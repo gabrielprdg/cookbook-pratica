@@ -112,9 +112,72 @@
 .edit {
   display: flex;
   margin-right: 4px;
+  cursor: pointer;
 }
 
 .delete {
   display: flex;
   align-items: center;
+  cursor: pointer;
+}
+
+.formContainer {
+  margin-left: 20px;
+}
+
+.topForm {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.middleForm {
+  display: flex;
+}
+
+.formContainer input {
+  width: 250px;
+  height: 40px;
+  background: #f5f8fa;
+  border: 1px solid #d3e2e5;
+  border-radius: 4px;
+  outline: none;
+  color: #5c8599;
+  padding: 15px;
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  margin-right: 30px;
+}
+
+.weight {
+  display: flex;
+  flex-direction: column;
+}
+
+.middleForm textarea {
+  width: 100%;
+  background: #f5f8fa;
+  border: 1px solid #d3e2e5;
+  border-radius: 5px;
+  outline: none;
+  color: #5c8599;
+  min-height: 120px;
+  max-height: 240px;
+  resize: vertical;
+  padding: 16px;
+  line-height: 28px;
+}
+
+.entryTemperature {
+  margin-left: 20px;
+}
+
+.entryTemperature input {
+  width: 100px;
+}
+
+.assemblyIng {
+  margin-right: 30px;
 }
